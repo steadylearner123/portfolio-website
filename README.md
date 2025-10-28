@@ -39,17 +39,14 @@ This project serves as my personal web portfolio to showcase my **professional e
 
 ---
 
-## 📂 Project Structure  
-
-portfolio-website/
-│
-├── index.html     # The main landing page for the website.
-├── portfolio.css  # All styles and responsive design code.
-├── script.js      # All client-side JavaScript for interactivity.
-├── profile.png    # My profile photo.
-├── preview.png    # Screenshot preview of the live site.
-└── README.md      # This project documentation file.
-
+| File/Folder     | Description                                     |
+| --------------- | ----------------------------------------------- |
+| `index.html`    | The main landing page for the website.          |
+| `portfolio.css` | Contains all styles and responsive design code. |
+| `script.js`     | Handles client-side JavaScript interactivity.   |
+| `profile.png`   | Profile photo.                                  |
+| `preview.png`   | Screenshot preview of the live site.            |
+| `README.md`     | Project documentation file.                     |
 
 ---
 
