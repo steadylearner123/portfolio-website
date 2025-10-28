@@ -67,7 +67,6 @@ Sections include:
 
 ## 💼 Key Links  
 
-- 📧 **Email:** [chyrilworks@gmail.com](mailto:chyrilworks@gmail.com)  
 - 🔗 **LinkedIn:** [linkedin.com/in/chyrilcaina123456](https://www.linkedin.com/in/chyrilcaina123456/)  
 - 🧰 **GitHub:** [github.com/steadylearner123](https://github.com/steadylearner123)  
 - 📁 **Google Drive – Certificates & Resources:** [View Folder](https://drive.google.com/drive/folders/1shs02pthReQfEJKR7hu0M79RgonKYWwm?usp=sharing)
