@@ -42,12 +42,19 @@ This project serves as my personal web portfolio to showcase my **professional e
 ## 📂 Project Structure  
 
 portfolio-website/
+
 │
+
 ├── index.html # Main HTML page
+
 ├── portfolio.css # Styling file
+
 ├── script.js # JavaScript for interactivity
+
 ├── profile.png # Profile photo
+
 ├── preview.png # (Optional) Screenshot preview
+
 └── README.md # Project documentation
 
 
