@@ -39,6 +39,8 @@ This project serves as my personal web portfolio to showcase my **professional e
 
 ---
 
+## 📂 Project Structure
+
 | File/Folder     | Description                                     |
 | --------------- | ----------------------------------------------- |
 | `index.html`    | The main landing page for the website.          |
