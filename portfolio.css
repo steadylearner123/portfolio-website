@@ -1,0 +1,526 @@
+:root{
+  --bg1: #0f172a;
+  --accent: #60a5fa;
+  --muted: #94a3b8;
+  --glass: rgba(255,255,255,0.06);
+  --card: rgba(255,255,255,0.03);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Base + background */
+html,body{height:100%;}
+body{
+  margin:0;
+  color:#e6eef8;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.08), transparent 8%),
+    radial-gradient(900px 500px at 90% 90%, rgba(99,102,241,0.06), transparent 8%),
+    linear-gradient(180deg,#071029 0%, #071a2a 60%, #021020 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* Layout container */
+.container{max-width:1080px;margin:0 auto;padding:28px;}
+header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.35));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Nav */
+nav{display:flex;align-items:center;gap:18px;justify-content:space-between;}
+.brand{display:flex;gap:12px;align-items:center}
+.brand .avatar{
+  width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);
+  display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#022;
+}
+.navlinks{display:flex;gap:12px;align-items:center}
+.navlinks a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-size:0.95rem}
+.navlinks a.active, .navlinks a:hover{color:#fff;background:rgba(255,255,255,0.04)}
+
+/* Main layout */
+main{padding:36px 0;}
+.hero{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:28px;
+  align-items:start;
+}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px;padding:20px;
+  box-shadow:0 6px 18px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.intro h1{margin:0;font-size:1.6rem}
+.intro p.lead{color:var(--muted);margin-top:8px}
+.contact-list{margin-top:14px;display:flex;flex-direction:column;gap:8px;font-size:0.95rem}
+.contact-list a{color:var(--accent);text-decoration:none}
+.stats{display:flex;gap:10px;margin-top:14px}
+.stat{background:var(--card);padding:10px 12px;border-radius:10px;font-size:0.9rem; color:var(--muted)}
+section{margin-top:28px}
+h2.section-title{margin:0 0 12px 0;font-size:1.15rem}
+.two-col{display:grid;grid-template-columns: 1fr 360px;gap:20px}
+ul.clean{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.cert-item, .exp-item{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.007));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.project-card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+.kicker{font-size:0.85rem;color:var(--muted)}
+footer{padding:28px 0;color:var(--muted);font-size:0.9rem}
+
+/* profile photo in sidebar */
+/* sidebar layout */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* profile photo container */
+.profile-photo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+}
+
+/* responsive profile photo */
+.profile-photo {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+}
+
+@media (max-width: 900px) {
+  .profile-photo {
+    max-width: 140px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-photo {
+    max-width: 120px;
+  }
+}
+
+
+/* small helpers */
+.muted{color:var(--muted)}
+.btn{display:inline-block;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021; font-weight:600;text-decoration:none}
+.btn.alt { margin-left:8px; background: transparent; border:1px solid rgba(255,255,255,0.06); color: var(--muted); }
+.divider { border:none; border-top:1px solid rgba(255,255,255,0.03); margin:18px 0; }
+
+/* typography small helpers */
+.small { font-size:0.95rem; }
+.clean .cert-row { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.cert-title { font-weight:600; }
+
+/* responsive */
+@media (max-width:900px){
+  .hero, .two-col{grid-template-columns:1fr;margin:0}
+  nav{flex-direction:column;align-items:flex-start;gap:10px}
+  .profile-photo { width:140px; height:140px; border-radius:14px; }
+}
+
+/* form styles */
+.form-grid { display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+.form-grid input, .form-grid textarea {
+  padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit;
+}
+.resource-list { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+.resource { min-width:220px; text-decoration:none; color:inherit; display:block; padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.02); background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006)); }
+
+/* Interactive resource cards */
+.resource {
+  position: relative;
+  min-width: 220px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* hover effect */
+.resource:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(96,165,250,0.4);
+  background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
+  color: #fff;
+}
+
+/* subtle glowing accent on focus (for accessibility) */
+.resource:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(96,165,250,0.4);
+}
+
+/* Better link visibility and interaction */
+section a {
+  color: #9ecbff; /* soft, readable blue */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+/* On hover — make it pop slightly */
+section a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(96,165,250,0.6);
+}
+
+/* Visited link color (slightly muted but still readable) */
+section a:visited {
+  color: #b3c7ff;
+}
+
+/* Learning resources — compact, uniform rows */
+.learning-resources h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.learning-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* Each resource is a two-line row: title (link) + meta (desc) */
+.learning-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.007));
+  border: 1px solid rgba(255,255,255,0.02);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+/* Title (link) styling */
+.learning-item .link-title {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+/* Description (secondary text) */
+.learning-item .desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+/* Hover / focus behaviour to show interactivity */
+.learning-item:hover,
+.learning-item:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(2,6,23,0.55);
+  border-color: rgba(96,165,250,0.22);
+}
+
+/* Make sure link itself is clearer on hover */
+.learning-item .link-title:hover,
+.learning-item .link-title:focus {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(96,165,250,0.45);
+}
+
+/* Responsive: keep items comfortable on small screens */
+@media (min-width: 720px) {
+  /* two-column grid for larger screens */
+  .learning-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Quick Details / Info list */
+.section-subtitle {
+  margin: 16px 0 10px 0;
+  font-size: 1rem;
+}
+
+.info-list {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Reduced from 10px to bring categories closer together */
+  padding: 14px; /* optional, keep for inner spacing */
+}
+
+/* Make links consistent and readable on dark background */
+.info-list a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.info-list a:hover,
+.info-list a:focus {
+  color: #fff;
+  text-decoration: underline;
+  text-shadow: 0 0 6px rgba(96,165,250,0.35);
+}
+
+/* smaller muted text inside info list */
+.info-list .muted {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* slightly reduce padding on small screens if the card feels large */
+@media (max-width: 520px) {
+  .info-list { gap: 8px; font-size: 0.92rem; padding: 12px; }
+}
+
+/* quick fix for sticky header covering section anchors */
+section {
+  /* reserve space for sticky header when using anchor links */
+  scroll-margin-top: 120px; /* adjust if your header is taller/shorter */
+}
+
+/* a slightly smaller value on narrow screens */
+@media (max-width: 900px) {
+  section { scroll-margin-top: 96px; }
+}
+
+/* Footer fix - keeps footer aligned at bottom */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto; /* main takes up remaining space */
+}
+
+footer {
+  flex-shrink: 0; /* footer stays at bottom */
+}
+
+/* =========================
+   Unified Hover / Focus Interaction
+   Applies to: buttons, links, cards
+========================= */
+
+/* Make all buttons, .resource, .project-card, .cert-item, .learning-item interactive in the same way */
+.btn,
+.btn.alt,
+.resource,
+.project-card,
+.cert-item,
+.learning-item {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.btn:hover,
+.btn.alt:hover,
+.resource:hover,
+.project-card:hover,
+.cert-item:hover,
+.learning-item:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(96,165,250,0.35);
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
+  color: #fff;
+}
+
+/* Focus effect for accessibility */
+.btn:focus,
+.btn.alt:focus,
+.resource:focus,
+.project-card:focus,
+.cert-item:focus,
+.learning-item:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(96,165,250,0.45);
+}
+
+/* Optional: subtle scale on click / active */
+.btn:active,
+.btn.alt:active,
+.resource:active,
+.project-card:active,
+.cert-item:active,
+.learning-item:active {
+  transform: translateY(-1px) scale(0.99);
+  box-shadow: 0 6px 16px rgba(96,165,250,0.3);
+}
+
+/* =========================
+   Stylish Footer Enhancement
+========================= */
+footer {
+  padding: 28px;
+  color: var(--muted);
+  font-size: 0.9rem;
+
+  /* Gradient & backdrop */
+  background: linear-gradient(180deg, rgba(2,6,23,0.7), rgba(2,6,23,0.5));
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.03);
+
+  /* Rounded edges for softer look */
+  border-radius: 12px 12px 0 0;
+
+  /* Subtle shadow/glow */
+  box-shadow: 0 -4px 18px rgba(2,6,23,0.6);
+  
+  /* Center content nicely */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Optional: add a divider line like the header’s */
+footer::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+/* Footer links styling */
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(96,165,250,0.6);
+}
+
+/* Optional: small copyright / muted text styling */
+footer .small-text {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+
+/* --- Floating background shapes --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* shapes don’t block clicks */
+  background: 
+    radial-gradient(circle, rgba(96,165,250,0.05) 20%, transparent 20%),
+    radial-gradient(circle, rgba(147,197,253,0.04) 20%, transparent 20%);
+  background-size: 80px 80px, 120px 120px;
+  animation: floatShapes 60s linear infinite;
+  z-index: -10; /* keep it far behind */
+}
+
+/* --- Ensure pseudo-elements stay behind content --- */
+.project-card::after,
+.cert-item::after,
+.learning-item::after,
+.btn::after,
+.btn.alt::after {
+  z-index: 0;  /* behind content inside the element */
+}
+
+/* --- Make content appear above pseudo-elements --- */
+.project-card, .cert-item, .learning-item,
+.btn, .btn.alt {
+  position: relative; /* ensures pseudo-elements stay inside */
+  z-index: 1;         /* text/content above the pseudo-element */
+}
+
+/* --- Card / certificate / learning item backgrounds --- */
+.project-card, .cert-item, .learning-item {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.03);
+  background-size: 400% 400%;
+  animation: cardGradient 30s ease infinite;
+  border-radius: 12px; /* optional for nicer look */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* --- Buttons --- */
+.btn, .btn.alt {
+  background: linear-gradient(90deg, rgba(96,165,250,0.15), rgba(123,58,237,0.15));
+  color: #021; /* solid text color */
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover, .btn.alt:hover {
+  background: linear-gradient(90deg, rgba(96,165,250,0.3), rgba(123,58,237,0.3));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* --- Card gradient animation --- */
+@keyframes cardGradient {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* --- Floating shapes animation --- */
+@keyframes floatShapes {
+  0% { background-position: 0 0, 0 0; }
+  50% { background-position: 100px 200px, 200px 100px; }
+  100% { background-position: 0 0, 0 0; }
+}
+
+.btn, .btn.alt {
+  background: linear-gradient(90deg, rgba(96,165,250,0.35), rgba(123,58,237,0.35));
+  color: #fff; /* white text for clarity */
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow behind button */
+}
+
+.btn:hover, .btn.alt:hover {
+  background: linear-gradient(90deg, rgba(96,165,250,0.55), rgba(123,58,237,0.55));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
