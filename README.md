@@ -3,9 +3,6 @@
 A modern, responsive single-page portfolio built with **HTML, CSS, and JavaScript**.  
 This project serves as my personal web portfolio to showcase my **professional experience, certificates, and projects**, as well as to provide contact and resource links.  
 
-![Portfolio Screenshot](preview.png)  
-*(Optional: Add a screenshot of your portfolio site and name it `preview.png` in your repo.)*
-
 ---
 
 ## 🚀 Live Demo  
